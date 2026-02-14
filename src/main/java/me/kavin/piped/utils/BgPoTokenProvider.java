@@ -86,11 +86,6 @@ public class BgPoTokenProvider implements PoTokenProvider {
     }
 
     @Override
-    public @Nullable PoTokenResult getWebEmbedClientPoToken(String videoId) {
-        return null;
-    }
-
-    @Override
     public @Nullable PoTokenResult getAndroidClientPoToken(String videoId) {
         return null;
     }
@@ -99,4 +94,15 @@ public class BgPoTokenProvider implements PoTokenProvider {
     public @Nullable PoTokenResult getIosClientPoToken(String videoId) {
         return null;
     }
+
+  @Override
+  public @Nullable PoTokenResult getWebEmbedClientPoToken(String videoId) {
+      try {
+          return getPoTokenPooled();
+      } catch (Exception e) {
+          e.printStackTrace();
+      }
+      return null;
+  }
+
 }
