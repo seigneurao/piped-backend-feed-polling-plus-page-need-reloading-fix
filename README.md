@@ -7,8 +7,8 @@ This is a temporary hack to fix new videos not appearing on the feed.
 ```dockerfile
     piped: # This is the backend service
         # image: 1337kavin/piped:latest # Removed this line
-        build: # Build the image with the workaround
-            context: https://github.com/firejoust/Piped-Backend.git # Tells docker-compose where to get the source
+        build: # Build the image with the workarounds
+            context: https://github.com/seigneurao/piped-backend-feed-polling-plus-page-need-reloading-fix.git # Tells docker-compose where to get the source
             dockerfile: Dockerfile # Specifies the Dockerfile within the context
 ```
 3. Append the following to `Piped-Docker/config/config.properties`:
